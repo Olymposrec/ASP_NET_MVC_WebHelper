@@ -1,0 +1,96 @@
+﻿@using ASP_NET_MVC_WebHelper.Models
+@using System.Web.Helpers
+@model List<Kitap>
+@{
+    ViewBag.Title = "Index";
+}
+    <style>
+        #customers {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #customers td, #customers th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            #customers tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            #customers tr:hover {
+                background-color: #ddd;
+            }
+
+            #customers th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: aqua;
+                color: white;
+            }
+    </style>
+    <script>
+        function customers_databind() {
+            console.log("Customers yüklendi...");
+        }
+    </script>
+
+
+
+@{ 
+    WebGrid grid = new WebGrid(
+        source: Model,
+        columnNames: new[] { "Id", "Adi", "Yazar", "YayinTarihi", "Fiyat" },
+        defaultSort: "Adi",
+        rowsPerPage: 8,
+        canPage: true,
+        canSort: true,
+        ajaxUpdateContainerId: "customers",
+        ajaxUpdateCallback:"customers_databind",
+        pageFieldName: "sayfano",
+        sortFieldName: "sirali",
+        sortDirectionFieldName: "yon");
+}
+    
+<h2>KİTAPLAR</h2>
+<hr />
+
+<div class="row">
+    <div class="col-md-12">
+        @using (Html.BeginForm())
+        {
+            @Html.TextBox("search",null,new { placeholder="Aranan Metin",@class="form-control col-md-2"})
+            <button type="submit" class="btn btn-success">
+                <span class="glyphicon glyphicon-search" ></span>
+                Ara
+            </button>
+        }
+    </div>
+    <div class="col-md-12">
+
+    </div>
+    <div class="col-md-12">
+        @grid.GetHtml(
+ caption: "Kitap Listesi",
+ displayHeader: true,
+ fillEmptyRows: false,
+ mode: WebGridPagerModes.All,
+ numericLinksCount: 3,
+ columns: new[] {
+    grid.Column("Adi","Kitap Adi"),
+    grid.Column("Yazar","Kitap Yazari"),
+    grid.Column("YayinTarihi","Yayın Tarihi"),
+    grid.Column("Fiyat","Fiyat($)"),
+ },
+ firstText: "[İlk]",
+ lastText: "[Son]",
+ previousText: "[Önceki]",
+ nextText: "[Sonraki]",
+ htmlAttributes: new { id = "customers" }
+ )
+    </div>
+</div>
+

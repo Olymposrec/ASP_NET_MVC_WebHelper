@@ -1,0 +1,25 @@
+<Chart Width="500" Height="500">
+  <Series>
+    <Series Name="Pie Graph" Legend="Legend1" XValueType="String" YValueType="Int32" ChartType="Pie" ChartArea="Default">
+      <Points>
+        <DataPoint YValues="10000" AxisLabel="Site - 1" />
+        <DataPoint YValues="20000" AxisLabel="Site - 2" />
+        <DataPoint YValues="30000" AxisLabel="Site - 3" />
+        <DataPoint YValues="40000" AxisLabel="Site - 4" />
+        <DataPoint YValues="50000" AxisLabel="Site - 5" />
+      </Points>
+    </Series>
+  </Series>
+  <ChartAreas>
+    <ChartArea Name="Default">
+    </ChartArea>
+  </ChartAreas>
+  <Legends>
+    <Legend Name="Legend1" Title="Detaylar">
+    </Legend>
+  </Legends>
+  <Titles>
+    <Title Name="Title1" Text="Vega - Web Sitesi Satış Grafiği">
+    </Title>
+  </Titles>
+</Chart>

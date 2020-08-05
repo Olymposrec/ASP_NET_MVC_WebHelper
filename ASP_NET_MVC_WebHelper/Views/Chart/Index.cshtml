@@ -1,0 +1,25 @@
+﻿@using System.Web.Helpers
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Chart Gösterimi - Index</h2>
+<hr />
+
+<div class="row">
+    <div class="col-sm-6">
+        <img src="/Chart/ChartGoster?tip=Column" alt="Chart 0" />
+    </div>
+    <div class="col-sm-6">
+        <img src="/Chart/ChartGoster2?tip=Pie" alt="Chart 2" />
+    </div>
+    <div class="col-sm-6">
+            <img src="/Chart/ChartGoster?tip=Line&cache=1" alt="Chart 1" />
+        </div>
+        @*<div class="col-sm-6">
+            <img src="/Chart/ChartGoster?tip=Pie" alt="Chart-1" />
+        </div>*@
+    <div class="col-sm-6">
+            <img src="/Chart/ChartGoster2?tip=Doughnut&cache=3 " alt="Chart 3" />
+        </div>
+</div>

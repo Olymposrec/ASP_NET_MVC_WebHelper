@@ -1,0 +1,34 @@
+<Chart Width="500" Height="500">
+  <Series>
+    <Series Name="Site - 1" Legend="Legend1" XValueType="Int32" YValueType="Int32" ChartArea="Default">
+      <Points>
+        <DataPoint XValue="20" YValues="10000" />
+        <DataPoint XValue="40" YValues="20000" />
+        <DataPoint XValue="60" YValues="30000" />
+        <DataPoint XValue="80" YValues="40000" />
+        <DataPoint XValue="100" YValues="50000" />
+      </Points>
+    </Series>
+    <Series Name="Site - 2" Legend="Legend1" XValueType="Int32" YValueType="Int32" ChartArea="Default">
+      <Points>
+        <DataPoint XValue="20" YValues="13687" />
+        <DataPoint XValue="40" YValues="20421" />
+        <DataPoint XValue="60" YValues="35461" />
+        <DataPoint XValue="80" YValues="48512" />
+        <DataPoint XValue="100" YValues="50123" />
+      </Points>
+    </Series>
+  </Series>
+  <ChartAreas>
+    <ChartArea Name="Default">
+    </ChartArea>
+  </ChartAreas>
+  <Legends>
+    <Legend Name="Legend1" Title="Detaylar">
+    </Legend>
+  </Legends>
+  <Titles>
+    <Title Name="Title1" Text="Vega - Web Sitesi Satış Grafiği">
+    </Title>
+  </Titles>
+</Chart>
